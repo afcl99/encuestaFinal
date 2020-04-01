@@ -15,11 +15,6 @@ class CreateUsersTests extends AbstractMigration
     public function change()
     {
         $table = $this->table('users_tests');
-        $table->addColumn('user', 'string', [
-            'default' => null,
-            'limit' => 255,
-            'null' => false,
-        ]);
         $table->addColumn('user_id', 'string', [
             'default' => null,
             'limit' => 50,
@@ -57,6 +52,7 @@ class CreateUsersTests extends AbstractMigration
             'default' => null,
             'null' => false,
         ]);
+        
         $table->addForeignkey("user_id","users","username",["delete"=>"CASCADE","update"=>"CASCADE"]);
         $table->addForeignkey("test_id","tests","id",["delete"=>"CASCADE","update"=>"CASCADE"]);
         $table->create();

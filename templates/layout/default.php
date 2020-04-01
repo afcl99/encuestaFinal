@@ -32,19 +32,22 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
     <?= $this->Html->css('milligram.min.css') ?>
     <?= $this->Html->css('cake.css') ?>
-
+    
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+    <?= $this->Html->script('jquery/jquery.js') ?>
+    <?= $this->Html->css('bootstrap/bootstrap.min') ?>
+    
+    <?= $this->Html->script('bootstrap/bootstrap.min') ?>
 </head>
 <body>
     <nav class="top-nav">
         <div class="top-nav-title">
-            <a href="/"><span>Cake</span>PHP</a>
+            <a href="/">Dragones Infernales</a>
         </div>
-        <div class="top-nav-links">
-            <a target="_blank" href="https://book.cakephp.org/4/">Documentation</a>
-            <a target="_blank" href="https://api.cakephp.org/4/">API</a>
+        <div class="top-nav-links">            
+            <li><?= $this->Html->link('logout',['controller'=>'Users','action'=>'logout']);?></li>
         </div>
     </nav>
     <main class="main">
@@ -56,4 +59,5 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <footer>
     </footer>
 </body>
+
 </html>
